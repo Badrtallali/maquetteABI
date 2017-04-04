@@ -40,6 +40,7 @@
             // 
             // grdContact
             // 
+            this.grdContact.AllowUserToAddRows = false;
             this.grdContact.BackgroundColor = System.Drawing.Color.LightBlue;
             this.grdContact.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grdContact.Location = new System.Drawing.Point(12, 60);

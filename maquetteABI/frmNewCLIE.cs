@@ -18,19 +18,31 @@ namespace maquetteABI
         }
 
 
-
+        /// <summary>
+        /// bouton ignorer ferme la fenetre
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
 
         private void btnIgnorerClient_Click(object sender, EventArgs e)
         {
             this.DialogResult = DialogResult.Cancel;
         }
-
+        /// <summary>
+        /// je charge mes combobox 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void frmNewClient_Load(object sender, EventArgs e)
         {
             cbxNatureClient.Items.AddRange(new String[] { "principale", "secondaire", "ancienne" });
             cbxTypeClient.Items.AddRange(new String[] { "public", "privee" });
         }
-
+        /// <summary>
+        ///si tout control est ok  on instancie un nouveau client et on incremente le nombre des clients dans la liste des clients
+         /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnValiderClient_Click(object sender, EventArgs e)
         {
             if (this.controle())
@@ -44,8 +56,11 @@ namespace maquetteABI
             }
         }
 
-      
-     
+
+        /// <summary>
+        /// methode pour gerer les exceptions 
+        /// </summary>
+        /// <returns></returns>
 
         public Boolean controle()
         {
@@ -102,7 +117,10 @@ namespace maquetteABI
             }
             return code;
         }
-
+        /// <summary>
+        /// instancier un client 
+        /// </summary>
+        /// <returns></returns>
         private Boolean instancie()
         {
             Client nouveauClient = new Client();

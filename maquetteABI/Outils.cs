@@ -7,7 +7,11 @@ using System.Threading.Tasks;
 namespace maquetteABI
 {
     class Outils
-    {
+    {/// <summary>
+    /// mes outils contiennent la methode qui verifie si c'est un entier ou pas
+    /// </summary>
+    /// <param name="s"></param>
+    /// <returns></returns>
         public static Boolean EstEntier(string s)
         {
             char c;

@@ -77,6 +77,7 @@
             this.grbContact.Size = new System.Drawing.Size(371, 484);
             this.grbContact.TabIndex = 2;
             this.grbContact.TabStop = false;
+         
             // 
             // lblHeures
             // 
@@ -114,6 +115,7 @@
             this.txtCommentContact.Name = "txtCommentContact";
             this.txtCommentContact.Size = new System.Drawing.Size(327, 130);
             this.txtCommentContact.TabIndex = 17;
+     
             // 
             // lblCommentairesContact
             // 

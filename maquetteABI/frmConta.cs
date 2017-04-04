@@ -21,43 +21,38 @@ namespace maquetteABI
             InitializeComponent();
         }
 
-       
+       /// <summary>
+       /// fermer la fenetre
+       /// </summary>
+       /// <param name="sender"></param>
+       /// <param name="e"></param>
 
         private void btnFermerContact_Click(object sender, EventArgs e)
         {
             this.DialogResult = DialogResult.Cancel;
         }
 
-       
+       /// <summary>
+       /// modifier mon contact
+       /// </summary>
+       /// <param name="sender"></param>
+       /// <param name="e"></param>
 
         private void btnModifierContact_Click(object sender, EventArgs e)
         {
-
+            // affecter les modif a mon contact
+            int a = Int32.Parse(txtNumContact.Text);
             if (this.controle())
             {
-                //for (int i = 0; i < Donnees.ArrayContact.Count; i++)
-                //{
-                //    if (Int32.Parse(txtNumContact.Text.Trim()) == Donnees.ArrayClient[i].NumClient)
-                //    {
-                //        Donnees.ArrayClient.Remove(Donnees.ArrayClient[i]);
-                //    }
-                //}
-
-
-
-                //Contact ContactModiff = new Contact();
-
+                contact.NumContact = a;
                 contact.NomContact = txtNomContact.Text.Trim().ToUpper();
                 contact.PrenomContact = txtPrenomContact.Text.Trim().ToUpper();
                 contact.FonctionContact = txtFonctionContact.Text;
                 contact.MailContact = txtAdresseMailContact.Text;
                 contact.TelephoneContact = txtTelephoneContact.Text;
-               
-
-                //Donnees.ArrayContact.Add(ContactModiff);
+                contact.CommentContact = txtCommentContact.Text;
+            
                 this.DialogResult = DialogResult.OK;
-
-
 
             }
         }
@@ -66,7 +61,10 @@ namespace maquetteABI
         {
             this.afficheContact(contact);
         }
-
+        /// <summary>
+        /// cette procédure affiche en textbox les données d'un contact
+        /// </summary>
+        /// <param name="unContact"></param>
         private void afficheContact(Contact unContact)
         {
             this.txtNumContact.Text = unContact.NumContact.ToString();
@@ -75,14 +73,14 @@ namespace maquetteABI
             this.txtFonctionContact.Text = unContact.FonctionContact;
             this.txtAdresseMailContact.Text = unContact.MailContact;
             this.txtTelephoneContact.Text = unContact.TelephoneContact.ToString();
+            this.txtCommentContact.Text = unContact.CommentContact;
           
         }
 
-
-
-
-
-
+        /// <summary>
+        /// methode pour gerer les exceptions
+        /// </summary>
+        /// <returns></returns>
         public Boolean controle()
         {
             Boolean code = true;
@@ -91,16 +89,7 @@ namespace maquetteABI
                 code = false;
                 MessageBox.Show("Le numero de contact saisi n'est pas un entier valide", "Erreur", MessageBoxButtons.OK);
             }
-            //for (int i = 0; i < Donnees.ArrayContact.Count; i++)
-            //{
-            //    if (!(Int32.Parse(txtNumContact.Text.Trim()) == Donnees.ArrayContact[i].NumContact))
-            //        code = true;
-            //    else
-            //    {
-            //        code = false;
-            //        MessageBox.Show("le numero de Contact est deja atibuer", "Erreur", MessageBoxButtons.OK);
-            //    }
-            //}
+           
             if (!(Outils.EstEntier(this.txtTelephoneContact.Text)))
             {
                 code = false;
@@ -117,6 +106,7 @@ namespace maquetteABI
             return code;
         }
 
-
+     
+      
     }
 }

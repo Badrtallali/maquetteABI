@@ -5,8 +5,10 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace maquetteABI
-{
-  public  class Contact
+{/// <summary>
+ /// je definit les attributs avec les methodes associees
+ /// </summary>
+    public class Contact
   {
       public static Int32 Ncontact;
         private Int32 numContact;
@@ -55,8 +57,6 @@ namespace maquetteABI
           get { return this.mailcontact; }
           set { mailcontact = value; }
       }
-
-
         public string CommentContact
         {
             get { return commentContact; }

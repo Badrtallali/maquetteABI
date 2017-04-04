@@ -18,17 +18,20 @@ namespace maquetteABI
             InitializeComponent();
             this.client = client;
         }
-
+        /// <summary>
+        /// bouton ignorer ferme la fenetre
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnIgnorerContact_Click(object sender, EventArgs e)
         {
             this.DialogResult = DialogResult.Cancel;
-        }
-
-        private void frmNewConta_Load(object sender, EventArgs e)
-        {
-
-        }
-
+        }       
+        /// <summary>
+        /// si tout control est ok  on instancie un nouveau contact et on incremente le nombre des contact dans la liste des contact client
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnValiderContact_Click(object sender, EventArgs e)
         {
             if (this.controle())
@@ -41,7 +44,10 @@ namespace maquetteABI
                 }
             }
         }
-
+        /// <summary>
+        /// instancier un client 
+        /// </summary>
+        /// <returns></returns>
         private Boolean instancie()
         {
             Contact nouveauContact = new Contact();
@@ -66,9 +72,10 @@ namespace maquetteABI
 
         }
 
-
-
-
+        /// <summary>
+        /// methode pour gerer les exceptions 
+        /// </summary>
+        /// <returns></returns>
         public Boolean controle()
         {
             Boolean code = true;
@@ -102,10 +109,5 @@ namespace maquetteABI
             
             return code;
         }
-
-
-
-
-
     }
 }

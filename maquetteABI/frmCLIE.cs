@@ -12,8 +12,9 @@ namespace maquetteABI
 {
     public partial class frmCLIE : Form
     {
-
+        //j instancie un client
         private Client LeClient;
+       
         public frmCLIE(Client unClient)
         {
             this.LeClient = unClient;
@@ -23,13 +24,21 @@ namespace maquetteABI
 
         }
 
-
+/// <summary>
+/// je charge mes combobox ainsi j aaffiche la fiche client
+/// </summary>
+/// <param name="sender"></param>
+/// <param name="e"></param>
         private void frmCLIE_Load(object sender, EventArgs e)
         {
             cbxNatureClient.Items.AddRange(new String[] { "principale", "secondaire", "ancienne" });
             cbxTypeClient.Items.AddRange(new String[] { "public", "privee" });
             this.afficheClient(LeClient);
         }
+        /// <summary>
+        /// methode  affiche en textbox les données d'un client
+        /// </summary>
+        /// <param name="unClient"></param>
         private void afficheClient(Client unClient)
         {
             this.txtNumeroDeClient.Text = unClient.NumClient.ToString();
@@ -44,17 +53,25 @@ namespace maquetteABI
             this.cbxNatureClient.Text = unClient.NatClient;
             this.cbxTypeClient.Text = unClient.TypClient;
             this.txtCommentClient.Text = unClient.CommentClient;
-            this.txtNumeroDeClient.Enabled = false;
+           // this.txtNumeroDeClient.Enabled = false;
         }
 
-
+/// <summary>
+/// fermer la fenetre 
+/// </summary>
+/// <param name="sender"></param>
+/// <param name="e"></param>
         private void btnFermerClient_Click(object sender, EventArgs e)
         {
             this.DialogResult = DialogResult.Cancel;
         }
 
 
-
+        /// <summary>
+        /// quand je click sur contact j ouvre la grille contacts
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnContactClient_Click(object sender, EventArgs e)
         {
             frmgrdCONTA frmcontact = new frmgrdCONTA(LeClient);
@@ -63,49 +80,44 @@ namespace maquetteABI
         }
 
 
-
+/// <summary>
+/// modifier un client
+/// </summary>
+/// <param name="sender"></param>
+/// <param name="e"></param>
         private void btnModifierClient_Click(object sender, EventArgs e)
         {
             int a = Int32.Parse(txtNumeroDeClient.Text);
             
         
             if (this.controle())
-            {
+            {//parcourir la liste des clients pour chercher le client concerné apres modifier  ses attribus
                 for (int i = 0; i < Donnees.ArrayClient.Count; i++)
                 {
                     if (Int32.Parse(txtNumeroDeClient.Text.Trim()) == Donnees.ArrayClient[i].NumClient)
                     {
-                        Donnees.ArrayClient.Remove(Donnees.ArrayClient[i]);
+                        Client client = Donnees.ArrayClient[i];
+                        client.NumClient = a;
+                        client.RaisoClient = txtRaisonSocialeDuClient.Text;
+                        client.DomaineClient = txtDomaineDactivite.Text;
+                        client.AdresClient = txtAdresseDuClient.Text;
+                        client.VilleClient = txtVille.Text;
+                        client.TelephoneClient = txtTelephone.Text;
+                        client.ChiffClient = Double.Parse(txtChiffreDaffaire.Text.Trim());
+                        client.CodePostalClient = txtCodePostale.Text;
+                        client.EffeClient = txtEffectifs.Text;
+                        client.NatClient = cbxNatureClient.Text;
+                        client.TypClient = cbxTypeClient.Text;
+                        client.CommentClient = txtCommentClient.Text;
                     }
-                }
-                
-
-
-                    Client ClientModif = new Client();
-                ClientModif.NumClient = a;
-                ClientModif.RaisoClient = txtRaisonSocialeDuClient.Text;
-                ClientModif.DomaineClient = txtDomaineDactivite.Text;
-                ClientModif.AdresClient = txtAdresseDuClient.Text;
-                ClientModif.VilleClient = txtVille.Text;
-                ClientModif.TelephoneClient = txtTelephone.Text;
-                ClientModif.ChiffClient = Double.Parse(txtChiffreDaffaire.Text.Trim());
-                ClientModif.CodePostalClient = txtCodePostale.Text;
-                ClientModif.EffeClient = txtEffectifs.Text;
-                ClientModif.NatClient = cbxNatureClient.Text;
-                ClientModif.TypClient = cbxTypeClient.Text;
-                ClientModif.CommentClient = txtCommentClient.Text;
-
-                Donnees.ArrayClient.Add(ClientModif);
+                }               
                 this.DialogResult = DialogResult.Cancel;
-
-
-
             }
-
-
-
-
         }
+        /// <summary>
+        /// methode pour gerer les exceptions 
+        /// </summary>
+        /// <returns></returns>
 
         public Boolean controle()
         {
@@ -150,11 +162,7 @@ namespace maquetteABI
             return code;
         }
 
-        private void grbClient_Enter(object sender, EventArgs e)
-        {
-
-
-        }
+       
     }
 }
 

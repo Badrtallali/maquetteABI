@@ -5,7 +5,9 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace maquetteABI
-{
+{/// <summary>
+/// je definit les attributs avec les methodes associees
+/// </summary>
     public class Client
     {
         private Int32 numClient;
@@ -22,7 +24,6 @@ namespace maquetteABI
         private String effeClient;
         private List<Contact> listeContactClient = new List<Contact>();
         private String commentClient;
-
         public int NumClient
         {
             get
@@ -30,8 +31,6 @@ namespace maquetteABI
             set
             { numClient = value; }
         }
-
-      
         public string RaisoClient
         {
             get { return this.raisoClient; }
@@ -47,8 +46,6 @@ namespace maquetteABI
             get { return villeClient; }
             set { villeClient = value.Trim().ToUpper(); }
         }
-
-
         public string CodePostalClient
         {
             get
@@ -99,7 +96,6 @@ namespace maquetteABI
                 effeClient = value;
             }
         }
-
         public List<Contact> ListeContactClient
         {
             get
@@ -112,16 +108,11 @@ namespace maquetteABI
                 listeContactClient = value;
             }
         }
-
         public  string CommentClient
         {
             get { return commentClient; }
             set { commentClient = value; }
 
         }
-           
-            
-
-
     }
 }

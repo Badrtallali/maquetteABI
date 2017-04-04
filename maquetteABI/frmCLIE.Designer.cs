@@ -93,7 +93,7 @@
             this.grbClient.Size = new System.Drawing.Size(405, 619);
             this.grbClient.TabIndex = 2;
             this.grbClient.TabStop = false;
-            this.grbClient.Enter += new System.EventHandler(this.grbClient_Enter);
+          
             // 
             // cbxNatureClient
             // 

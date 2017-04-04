@@ -181,7 +181,7 @@
             this.Controls.Add(this.txtNumContact);
             this.Name = "frmNewConta";
             this.Text = "frmNewConta";
-            this.Load += new System.EventHandler(this.frmNewConta_Load);
+    
             this.ResumeLayout(false);
             this.PerformLayout();
 
