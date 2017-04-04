@@ -15,7 +15,8 @@ namespace maquetteABI
         private String telephoneContact;
         private String fonctionContact;
         private String mailcontact;
-      public int NumContact
+        private String commentContact;
+        public int NumContact
         {
            get
             { return this.numContact; }
@@ -56,7 +57,11 @@ namespace maquetteABI
       }
 
 
-        
+        public string CommentContact
+        {
+            get { return commentContact; }
+            set { commentContact = value; }
+        }
 
     }
 }

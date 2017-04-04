@@ -43,6 +43,7 @@ namespace maquetteABI
             this.txtEffectifs.Text = unClient.EffeClient.ToString();
             this.cbxNatureClient.Text = unClient.NatClient;
             this.cbxTypeClient.Text = unClient.TypClient;
+            this.txtCommentClient.Text = unClient.CommentClient;
             this.txtNumeroDeClient.Enabled = false;
         }
 
@@ -65,9 +66,8 @@ namespace maquetteABI
 
         private void btnModifierClient_Click(object sender, EventArgs e)
         {
-        
-
-           
+            int a = Int32.Parse(txtNumeroDeClient.Text);
+            
         
             if (this.controle())
             {
@@ -82,7 +82,7 @@ namespace maquetteABI
 
 
                     Client ClientModif = new Client();
-          
+                ClientModif.NumClient = a;
                 ClientModif.RaisoClient = txtRaisonSocialeDuClient.Text;
                 ClientModif.DomaineClient = txtDomaineDactivite.Text;
                 ClientModif.AdresClient = txtAdresseDuClient.Text;
@@ -93,7 +93,7 @@ namespace maquetteABI
                 ClientModif.EffeClient = txtEffectifs.Text;
                 ClientModif.NatClient = cbxNatureClient.Text;
                 ClientModif.TypClient = cbxTypeClient.Text;
-
+                ClientModif.CommentClient = txtCommentClient.Text;
 
                 Donnees.ArrayClient.Add(ClientModif);
                 this.DialogResult = DialogResult.Cancel;

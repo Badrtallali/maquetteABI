@@ -21,7 +21,7 @@ namespace maquetteABI
         private Double chiffClient;
         private String effeClient;
         private List<Contact> listeContactClient = new List<Contact>();
-     
+        private String commentClient;
 
         public int NumClient
         {
@@ -112,5 +112,16 @@ namespace maquetteABI
                 listeContactClient = value;
             }
         }
+
+        public  string CommentClient
+        {
+            get { return commentClient; }
+            set { commentClient = value; }
+
+        }
+           
+            
+
+
     }
 }

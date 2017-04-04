@@ -67,9 +67,12 @@ namespace maquetteABI
         
         private void btnSupprimer_Click(object sender, EventArgs e)
         {
-            Donnees.ArrayClient.RemoveAt(grdClient.CurrentRow.Index);
-            this.afficheClient();
-            this.btnSupprimer.Enabled = false;
+            if (grdClient.RowCount != 0 )
+            {
+                Donnees.ArrayClient.RemoveAt(grdClient.CurrentRow.Index);
+                this.afficheClient();
+                this.btnSupprimer.Enabled = false;
+            }
         }
 
         private void btnRechercherClient_Click(object sender, EventArgs e)
@@ -99,7 +102,10 @@ namespace maquetteABI
 
         private void grdClient_CellClick_1(object sender, DataGridViewCellEventArgs e)
         {
-            this.btnSupprimer.Enabled = true;
+            if (grdClient.RowCount != 0)
+            {
+                this.btnSupprimer.Enabled = true;
+            }
         }
     }
 }

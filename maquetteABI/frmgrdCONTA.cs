@@ -60,9 +60,15 @@ namespace maquetteABI
 
         private void btnSupprimerContact_Click(object sender, EventArgs e)
         {
-            client.ListeContactClient.RemoveAt(grdContact.CurrentRow.Index);
-            this.afficheContact();
-            this.btnSupprimerContact.Enabled = false;
+            if (grdContact.RowCount != 0)
+            {
+                client.ListeContactClient.RemoveAt(grdContact.CurrentRow.Index);
+                this.afficheContact();
+                this.btnSupprimerContact.Enabled = false;
+            }
+            ///   client.ListeContactClient.RemoveAt(grdContact.CurrentRow.Index);
+            ///   this.afficheContact();
+            ///  this.btnSupprimerContact.Enabled = false;
         }
 
         private void btnRechercherContact_Click(object sender, EventArgs e)
