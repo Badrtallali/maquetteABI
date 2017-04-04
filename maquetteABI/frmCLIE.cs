@@ -18,11 +18,7 @@ namespace maquetteABI
         public frmCLIE(Client unClient)
         {
             this.LeClient = unClient;
-
-            InitializeComponent();
-
-
-        }
+            InitializeComponent();}
 
 /// <summary>
 /// je charge mes combobox ainsi j aaffiche la fiche client
@@ -55,7 +51,6 @@ namespace maquetteABI
             this.txtCommentClient.Text = unClient.CommentClient;
            // this.txtNumeroDeClient.Enabled = false;
         }
-
 /// <summary>
 /// fermer la fenetre 
 /// </summary>
@@ -65,8 +60,6 @@ namespace maquetteABI
         {
             this.DialogResult = DialogResult.Cancel;
         }
-
-
         /// <summary>
         /// quand je click sur contact j ouvre la grille contacts
         /// </summary>
@@ -78,8 +71,6 @@ namespace maquetteABI
             DialogResult rep = frmcontact.ShowDialog();
 
         }
-
-
 /// <summary>
 /// modifier un client
 /// </summary>
@@ -118,7 +109,6 @@ namespace maquetteABI
         /// methode pour gerer les exceptions 
         /// </summary>
         /// <returns></returns>
-
         public Boolean controle()
         {
             Boolean code = true;
@@ -161,8 +151,6 @@ namespace maquetteABI
             }
             return code;
         }
-
-       
     }
 }
 

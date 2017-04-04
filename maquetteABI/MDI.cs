@@ -15,20 +15,16 @@ namespace maquetteABI
         public frmMDI()
         {
             InitializeComponent();
-
         }
-
         private void fermerToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }
-
         private void listeClientToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frmgrdCLIE frmg = new frmgrdCLIE();
             DialogResult rep = frmg.ShowDialog();
         }
-
         private void frmMDI_FormClosing(object sender, FormClosingEventArgs e)
         {
             DialogResult rep;
@@ -37,11 +33,6 @@ namespace maquetteABI
             {
                 e.Cancel = true;
             }
-        }
-
-        private void frmMDI_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

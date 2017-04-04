@@ -12,26 +12,21 @@ namespace maquetteABI
 {
     public partial class frmContact : Form
     {
-
         private Contact contact;
-
         public frmContact(ref Contact contact)
         {
             this.contact = contact;
             InitializeComponent();
         }
-
        /// <summary>
        /// fermer la fenetre
        /// </summary>
        /// <param name="sender"></param>
        /// <param name="e"></param>
-
         private void btnFermerContact_Click(object sender, EventArgs e)
         {
             this.DialogResult = DialogResult.Cancel;
         }
-
        /// <summary>
        /// modifier mon contact
        /// </summary>
@@ -56,7 +51,6 @@ namespace maquetteABI
 
             }
         }
-
         private void Liste_Contactes_Load(object sender, EventArgs e)
         {
             this.afficheContact(contact);
@@ -74,9 +68,7 @@ namespace maquetteABI
             this.txtAdresseMailContact.Text = unContact.MailContact;
             this.txtTelephoneContact.Text = unContact.TelephoneContact.ToString();
             this.txtCommentContact.Text = unContact.CommentContact;
-          
         }
-
         /// <summary>
         /// methode pour gerer les exceptions
         /// </summary>
@@ -105,8 +97,5 @@ namespace maquetteABI
 
             return code;
         }
-
-     
-      
     }
 }

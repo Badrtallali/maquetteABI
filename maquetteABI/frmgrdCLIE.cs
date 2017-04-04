@@ -27,13 +27,11 @@ namespace maquetteABI
         {
             this.DialogResult = DialogResult.Cancel;
         }
-
         /// <summary>
         ///   instancier un form de saisie de Client puis réafficher la datagridview 
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-
         private void btnAjouterClient_Click(object sender, EventArgs e)
         {
             frmNewClient frmc = new frmNewClient();
@@ -41,7 +39,6 @@ namespace maquetteABI
             {
                 afficheClient();
             }
-
         }
         /// <summary>
         ///  rétablit la source de données de la dataGridView et rafraîchit son affichage 
@@ -84,8 +81,7 @@ namespace maquetteABI
             this.grdClient.Refresh();
             dt = null;
             dr = null;
-        }
-      
+        }      
         /// <summary>
         /// supprime un client de la grille
         /// </summary>
@@ -111,20 +107,12 @@ namespace maquetteABI
                   "%' or [Raison Sociale] like '%" + this.txtRechercherClient.Text +
                   "%' or [Ville du Client] like '%" + this.txtRechercherClient.Text +
                   "%' or [Code Postale Du Client] like '%" + this.txtRechercherClient.Text + "%' ";
-
         }
         /// <summary>
         /// 
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void grdClient_DoubleClick_1(object sender, EventArgs e)
-        {
-            
-            
-
-        }
-
        
         /// <summary>
         /// s il y a des clients sur la grille , le fait de selectioner un client rend le bouton supprimer active
@@ -136,9 +124,7 @@ namespace maquetteABI
             if (grdClient.RowCount != 0)
             {
                 this.btnSupprimer.Enabled = true;
-            }
-
-          
+            } 
         }
         /// <summary>
         /// double clic sur la grille ; ouvrir la feuille détail en y affichant le client correspondant a la ligne double clic

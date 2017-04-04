@@ -34,20 +34,14 @@ namespace maquetteABI
             }
             return code;
         }
-
         public static Boolean Controle(String text)
         {
             Boolean code = true;
             if (!(Outils.EstEntier(text)))
             {
                 code = false;
-
             }
-
-
             return code;
         }
-
-
-    }
+   }
 }

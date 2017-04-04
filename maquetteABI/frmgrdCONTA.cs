@@ -81,8 +81,7 @@ namespace maquetteABI
                 client.ListeContactClient.RemoveAt(grdContact.CurrentRow.Index);
                 this.afficheContact();
                 this.btnSupprimerContact.Enabled = false;
-            }
-         
+            } 
         }
         /// <summary>
         /// rechercher un contact dans ma grille, fait recherche sur tt les colomns

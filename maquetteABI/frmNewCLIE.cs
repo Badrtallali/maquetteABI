@@ -16,8 +16,6 @@ namespace maquetteABI
         {
             InitializeComponent();
         }
-
-
         /// <summary>
         /// bouton ignorer ferme la fenetre
         /// </summary>
@@ -55,8 +53,6 @@ namespace maquetteABI
                 }
             }
         }
-
-
         /// <summary>
         /// methode pour gerer les exceptions 
         /// </summary>
@@ -65,10 +61,6 @@ namespace maquetteABI
         public Boolean controle()
         {
             Boolean code = true;
-
-
-
-
             if (!(Outils.EstEntier(this.txtNumeroDeClient.Text)))
             {
                 code = false;

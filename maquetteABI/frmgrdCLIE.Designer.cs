@@ -51,7 +51,6 @@
             this.grdClient.TabIndex = 0;
             this.grdClient.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdClient_CellClick_1);
             this.grdClient.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdClient_CellDoubleClick);
-            this.grdClient.DoubleClick += new System.EventHandler(this.grdClient_DoubleClick_1);
             // 
             // btnAjouterClient
             // 

@@ -71,7 +71,6 @@ namespace maquetteABI
             }
 
         }
-
         /// <summary>
         /// methode pour gerer les exceptions 
         /// </summary>
