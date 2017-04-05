@@ -74,13 +74,20 @@ namespace maquetteABI
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void btnSupprimerContact_Click(object sender, EventArgs e)
+        private void btnSupprimerContact_Click(object sender,EventArgs e)
         {
             if (grdContact.RowCount != 0)
             {
-                client.ListeContactClient.RemoveAt(grdContact.CurrentRow.Index);
-                this.afficheContact();
-                this.btnSupprimerContact.Enabled = false;
+                DialogResult rep;
+                rep = MessageBox.Show("Voulez vous vraiment supprimer le Contact", "Supprimer", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (rep == DialogResult.Yes)
+                {
+                   
+                    client.ListeContactClient.RemoveAt(grdContact.CurrentRow.Index);
+                    this.afficheContact();
+                    this.btnSupprimerContact.Enabled = false;
+                }
+               
             } 
         }
         /// <summary>

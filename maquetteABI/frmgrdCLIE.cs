@@ -91,9 +91,15 @@ namespace maquetteABI
         {
             if (grdClient.RowCount != 0 )
             {
-                Donnees.ArrayClient.RemoveAt(Convert.ToInt32(grdClient[0,grdClient.CurrentRow.Index].Value));// Renaud the great  idea 
-                this.afficheClient();
-                this.btnSupprimer.Enabled = false;
+                DialogResult rep;
+                rep = MessageBox.Show("Voulez vous vraiment supprimer le Contact", "Supprimer", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (rep == DialogResult.Yes)
+                {
+                    Donnees.ArrayClient.RemoveAt(Convert.ToInt32(grdClient[0, grdClient.CurrentRow.Index].Value));       // Renaud the great  idea 
+                    this.afficheClient();
+                    this.btnSupprimer.Enabled = false;
+                }
+                
             }
         }
         /// <summary>

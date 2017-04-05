@@ -104,7 +104,7 @@
             this.Name = "frmMDI";
             this.Text = "MDI";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmMDI_FormClosing);
-            this.Load += new System.EventHandler(this.frmMDI_Load);
+           
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
